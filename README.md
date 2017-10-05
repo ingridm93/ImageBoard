@@ -18,7 +18,7 @@ An imageboard where anybody could go and post an image of their choosing. Featur
 
 
 
-* Possibility to click on a card on the home screen and enlarge the image at a size close to its full size. There is also a comment section where users can leave a comment for others.
+* Users can click on an image card in the home screen and enlarge the image at a size close to its full size. There is also a comment section where users can leave a comment for others.
 
 
 ![Click on Picture to Full Size](imageboard-2.gif)
@@ -26,7 +26,7 @@ An imageboard where anybody could go and post an image of their choosing. Featur
 
 
 
-* Possibility for users to upload an image.
+* Users can also upload images.
 
 
 ![Upload Image](imageboard-3.gif)
