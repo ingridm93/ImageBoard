@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="/stylesheet.css">
+
+        <title>Image Board</title>
+
+    </head>
+
+    <body>
+
+        <div class="navbar">
+
+            <a href="#home" id="logo-home">
+                <img src="home.png">
+            </a>
+            <div class="logo-upload">
+                <a href="#upload" >
+                    <img id="test-id" src="upload.png">
+                </a>
+            </div>
+
+        </div>
+
+    <div id="board">
+
+
+    <div class="upload-container">
+
+        <h2> CHOOSE A FILE TO UPLOAD. </h2>
+
+        <div id="upload"></div>
+
+            <template id="upload">
+
+                <div class="up-inpt">
+
+
+                    <input type="text" placeholder="Title" name="title" class="upload-input "> </br>
+                    <input type="text" placeholder="Username" name="username" class="upload-input"> </br>
+                    <input type="textarea" placeholder="Description" name="description" class="upload-input"></br>
+                    <input type="file" class="file-button"></br>
+                    <button id="upload-button">Upload</button>
+                    <button id="exit-button">Exit</button>
+
+                </div>
+            </template>
+
+        </div>
+
+        <div id="main"></div>
+
+        <template id="cards">
+
+
+            {{#each images}}
+
+            <div class="images">
+
+                <a href="/#{{id}}">
+                    <img class="modal-img" src="{{image}}" alt="{{title}}" id="{{id}}">
+                </a>
+                <div class="title">{{title}}</div>
+                <div class="username">@{{username}}</div>
+
+            </div>
+
+            {{/each}}
+
+            <button class="more">MORE</button>
+
+        </template>
+
+
+        <div class="modal">
+
+            <div id="modal"></div>
+
+            <span class="close">&times;</span>
+
+            <template id="bigImage">
+
+                <div class="content">
+
+                    <div class="big">
+
+                        <img class="big-img" src="{{image}}">
+
+                        <div class="img-info">
+                            @{{username}}</br>
+                            {{title}}</br></br>
+                            {{description}}
+
+                        </div>
+                    </div>
+
+
+                    <div class="comments">
+
+
+                            {{#each comments}}
+
+                            <div class="user-comment"> <p id="comment-username">{{username}}:</p> {{comment}} </div>
+
+                            {{/each}}
+
+                        <div class="post">
+
+                            <input type="textarea" placeholder="Username" name="username" class="upload-input"> </br>
+
+                            <input type="textarea" placeholder="Write a comment ..." name="comment" class="upload-input">
+
+                            <button id="post-comment">Post</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </template>
+        </div>
+
+    </div>
+
+
+
+
+
+        <script src="/js/handlebars.min.js"></script>
+        <script src="/js/jquery-3.1.1.min.js"></script>
+        <script src="/js/underscore-min.js"></script>
+        <script src="/js/backbone-min.js"></script>
+
+        <script src="/js/script.js"></script>
+        <script src="./dom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+    </body>
+
+</html>

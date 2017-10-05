@@ -1,0 +1,423 @@
+body {
+    height: 100%;
+    background-image: url(5.jpg);
+}
+
+#board {
+    height: 80%;
+    width: 85%;
+    padding: 7%;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-self: flex-start;
+}
+
+.images {
+    transition: 0.3s;
+    width: 12%;
+    height: 300px;
+    text-align: center;
+    padding: 0.5%;
+    background-color: white;
+    margin: 2%;
+}
+
+.content {
+    margin: 3%;
+    padding-left: 2%;
+}
+
+.modal-img {
+    position: relative;
+    cursor: pointer;
+    object-fit: cover;
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.images {
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+}
+
+
+/* Rotate all even images 2 degrees */
+
+.images:nth-child(even) {
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+}
+
+
+/* Don't rotate every third image, but offset its position */
+
+.images:nth-child(3n) {
+    -webkit-transform: none;
+    -moz-transform: none;
+    position: relative;
+    top: -5px;
+}
+
+
+/* Rotate every fifth image by 5 degrees and offset it */
+
+.images:nth-child(5n) {
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    position: relative;
+    right: 5px;
+}
+
+
+/* Keep default rotate for every eighth, but offset it */
+
+.images:nth-child(8n) {
+    position: relative;
+    top: 8px;
+    right: 5px;
+}
+
+
+/* Keep default rotate for every eleventh, but offset it */
+
+.images:nth-child(11n) {
+    position: relative;
+    top: 3px;
+    left: -5px;
+}
+
+.images:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    position: relative;
+    z-index: 5;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+}
+
+
+
+.title {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Courier New;
+}
+
+.username {
+    position: absolute;
+    top: 95%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+    font-family: Courier New;
+    font-size: 12px;
+}
+
+.more {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    left: 50%;
+    bottom: 2%;
+    background-color: rgba(0, 0, 0, .5);
+    border: black;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    height: 13%;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 1%;
+    z-index: 25;
+}
+
+#logo-home {
+    position: relative;
+    height: 60%;
+    width: 10%;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin-right: 4%;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+.logo-upload {
+    position: relative;
+    left: 75%;
+    height: 60%;
+    width: 10%;
+    top: 50%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+}
+
+
+/*.tabs {
+    position: relative;
+    height: 80%;
+    width: 10%;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: white;
+    margin-right: 2%;
+    margin-left: 500px;
+    vertical-align: middle;
+}*/
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.close {
+    position: relative;
+    left: 97%;
+    top: 2%;
+    color: white;
+    font-size: 40px;
+    z-index: 1000;
+}
+
+.big {
+    position: fixed;
+    width: 60%;
+    height: 80%;
+    max-height: 80%;
+    left: 2%;
+    top: 7%;
+    z-index: 100000;
+}
+
+.big-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1000;
+    margin-left: 4%;
+}
+
+.img-info {
+    display: none;
+    position: absolute;
+    color: white;
+    vertical-align: text-top;
+    text-align: left;
+    font-size: 15px;
+    left: 4%;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 456789098;
+    font-family: Courier New;
+    font-size: 20px;
+}
+
+.comments, .big, .post,  {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.5s;
+    animation-name: zoom;
+    animation-duration: 0.5s;
+}
+
+.comments {
+    margin-top: 2%;
+    margin-bottom: 3%;
+    position: fixed;
+    right: 5%;
+    top: 3.5%;
+    background-color: white;
+    width: 30%;
+    height: 55%;
+    opacity: 0.8;
+    z-index: 1000;
+    font-family: Courier New;
+    font-size: 20px;
+    border: 1px dot black;
+    text-align: left;
+}
+
+.user-comment {
+
+    position: relative;
+    font-family: Courier New;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 95%;
+    height: 14%;
+    padding: 2%;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 1%;
+}
+
+#comment-username {
+    text-decoration: underline;
+    font-weight: bold;
+    display: inline;
+}
+
+.post {
+
+    position: fixed;
+    font-family: Courier New;
+    font-size: 20px;
+    top: 66%;
+    z-index: 34567890;
+    width: 30%;
+    height: 25%;
+    right: 5%;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#post-comment {
+    height: 20%;
+    width: 20%;
+    font-family: Courier New;
+    font-size: 13px;
+}
+
+.upload-container {
+    position: absolute;
+    top: 8%;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 5763842;
+    background-image: url(5.jpg);
+    padding-bottom: 2%;
+}
+
+.up-inpt {
+    margin-top: 3%;
+}
+
+h2 {
+
+    font-family: Courier New;
+    color: white;
+    font-size: 30px;
+    margin-top: 5%;
+}
+
+.upload-input {
+    margin-left: 1%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    height: 40px;
+    width: 95%;
+    border-radius: 5px;
+    z-index: 674598234;
+    font-size: 15px;
+    font-family: Courier New;
+}
+
+.file-button {
+    position: relative;
+    height: 50px;
+    border-radius: 5px;
+    width: 30%;
+    z-index: 5763842;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: Courier New;
+    font-size: 20px;
+    color: white;
+    font-weight:200;
+}
+
+#upload-button {
+    position: relative;
+    top: 70%;
+    height: 50px;
+    width: 80%;
+    border-radius: 5px;
+    z-index: 5763842;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: Courier New;
+
+}
+
+#exit-button {
+    position: relative;
+    margin-top: 1%;
+    top: 77%;
+    height: 50px;
+    width: 40%;
+    border-radius: 5px;
+    z-index: 5763842;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: Courier New;
+}
+}
+
+input {
+    margin-bottom: 10px;
+    z-index: 5763842;
+}
+
+.comment-username {
+    height: 20%;
+    width: 99%;
+}
+
+.comment-box {
+    height: 50%;
+    width: 99%;
+}
+
+.close:hover, .close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
